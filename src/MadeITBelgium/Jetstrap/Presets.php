@@ -1,13 +1,13 @@
 <?php
 
-namespace NascentAfrica\Jetstrap;
+namespace MadeITBelgium\Jetstrap;
 
 use Illuminate\Filesystem\Filesystem;
 
 /**
  * Class Presets
  *
- * @package NascentAfrica\Jetstrap
+ * @package MadeITBelgium\Jetstrap
  */
 class Presets
 {
@@ -55,11 +55,11 @@ class Presets
             copy(__DIR__ . '/../../../presets/CoreUi/resources/views/layouts/app.blade.php', resource_path('views/layouts/app.blade.php'));
             copy(__DIR__ . '/../../../presets/CoreUi/resources/views/navigation-menu.blade.php', resource_path('views/navigation-menu.blade.php'));
 
-            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/button.blade.php', resource_path('views/vendor/jetstream/components/button.blade.php'));
-            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/dropdown.blade.php', resource_path('views/vendor/jetstream/components/dropdown.blade.php'));
-            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/dropdown-link.blade.php', resource_path('views/vendor/jetstream/components/dropdown-link.blade.php'));
-            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/nav-link.blade.php', resource_path('views/vendor/jetstream/components/nav-link.blade.php'));
-            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/welcome.blade.php', resource_path('views/vendor/jetstream/components/welcome.blade.php'));
+            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/button.blade.php', resource_path('views/components/button.blade.php'));
+            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/dropdown.blade.php', resource_path('views/components/dropdown.blade.php'));
+            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/dropdown-link.blade.php', resource_path('views/components/dropdown-link.blade.php'));
+            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/nav-link.blade.php', resource_path('views/components/nav-link.blade.php'));
+            copy(__DIR__ . '/../../../presets/CoreUi/resources/views/components/welcome.blade.php', resource_path('views/components/welcome.blade.php'));
 
         } elseif ($stack == 'inertia') {
 
@@ -133,9 +133,9 @@ class Presets
             copy(__DIR__ . '/../../../presets/AdminLte/resources/views/layouts/app.blade.php', resource_path('views/layouts/app.blade.php'));
             copy(__DIR__ . '/../../../presets/AdminLte/resources/views/navigation-menu.blade.php', resource_path('views/navigation-menu.blade.php'));
 
-            copy(__DIR__ . '/../../../presets/AdminLte/resources/views/components/dropdown.blade.php', resource_path('views/vendor/jetstream/components/dropdown.blade.php'));
-            copy(__DIR__ . '/../../../presets/AdminLte/resources/views/components/nav-link.blade.php', resource_path('views/vendor/jetstream/components/nav-link.blade.php'));
-            copy(__DIR__ . '/../../../presets/AdminLte/resources/views/components/welcome.blade.php', resource_path('views/vendor/jetstream/components/welcome.blade.php'));
+            copy(__DIR__ . '/../../../presets/AdminLte/resources/views/components/dropdown.blade.php', resource_path('views/components/dropdown.blade.php'));
+            copy(__DIR__ . '/../../../presets/AdminLte/resources/views/components/nav-link.blade.php', resource_path('views/components/nav-link.blade.php'));
+            copy(__DIR__ . '/../../../presets/AdminLte/resources/views/components/welcome.blade.php', resource_path('views/components/welcome.blade.php'));
 
             
         } elseif ($stack == 'inertia') {

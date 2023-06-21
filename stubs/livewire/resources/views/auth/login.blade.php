@@ -1,12 +1,12 @@
 <x-guest-layout>
-    <x-jet-authentication-card>
+    <x-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <x-authentication-card-logo />
         </x-slot>
 
         <div class="card-body">
 
-            <x-jet-validation-errors class="mb-3 rounded-0" />
+            <x-validation-errors class="mb-3 rounded-0" />
 
             @if (session('status'))
                 <div class="alert alert-success mb-3 rounded-0" role="alert">
@@ -17,24 +17,24 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Email') }}" />
+                    <x-label value="{{ __('Email') }}" />
 
-                    <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
+                    <x-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
                                  name="email" :value="old('email')" required />
-                    <x-jet-input-error for="email"></x-jet-input-error>
+                    <x-input-error for="email"></x-input-error>
                 </div>
 
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Password') }}" />
+                    <x-label value="{{ __('Password') }}" />
 
-                    <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
+                    <x-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
                                  name="password" required autocomplete="current-password" />
-                    <x-jet-input-error for="password"></x-jet-input-error>
+                    <x-input-error for="password"></x-input-error>
                 </div>
 
                 <div class="mb-3">
                     <div class="custom-control custom-checkbox">
-                        <x-jet-checkbox id="remember_me" name="remember" />
+                        <x-checkbox id="remember_me" name="remember" />
                         <label class="custom-control-label" for="remember_me">
                             {{ __('Remember Me') }}
                         </label>
@@ -49,12 +49,12 @@
                             </a>
                         @endif
 
-                        <x-jet-button>
+                        <x-button>
                             {{ __('Log in') }}
-                        </x-jet-button>
+                        </x-button>
                     </div>
                 </div>
             </form>
         </div>
-    </x-jet-authentication-card>
+    </x-authentication-card>
 </x-guest-layout>

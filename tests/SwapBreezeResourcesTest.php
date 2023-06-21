@@ -1,11 +1,11 @@
 <?php
 
 
-namespace NascentAfrica\Jetstrap\Tests;
+namespace MadeITBelgium\Jetstrap\Tests;
 
 
 use Illuminate\Filesystem\Filesystem;
-use NascentAfrica\Jetstrap\JetstrapFacade;
+use MadeITBelgium\Jetstrap\JetstrapFacade;
 
 class SwapBreezeResourcesTest extends TestCase
 {

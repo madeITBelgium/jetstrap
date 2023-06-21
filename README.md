@@ -1,13 +1,13 @@
 # Jetstrap
 
-[![Latest Stable Version](https://poser.pugx.org/nascent-africa/jetstrap/v)](//packagist.org/packages/nascent-africa/jetstrap)
-[![Total Downloads](https://poser.pugx.org/nascent-africa/jetstrap/downloads)](//packagist.org/packages/nascent-africa/jetstrap)
-[![License](https://poser.pugx.org/nascent-africa/jetstrap/license)](//packagist.org/packages/nascent-africa/jetstrap)
+[![Latest Stable Version](https://poser.pugx.org/madeitbelgium/jetstrap/v)](//packagist.org/packages/madeitbelgium/jetstrap)
+[![Total Downloads](https://poser.pugx.org/madeitbelgium/jetstrap/downloads)](//packagist.org/packages/madeitbelgium/jetstrap)
+[![License](https://poser.pugx.org/madeitbelgium/jetstrap/license)](//packagist.org/packages/madeitbelgium/jetstrap)
 
   
 ## Description
 
-Jetstrap is a lightweight laravel 8 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) / [Breeze](https://github.com/laravel/breeze) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
+Jetstrap is a lightweight laravel 10 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) / [Breeze](https://github.com/laravel/breeze) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
 
 ## Table of Content
   * [Installation](#installation)
@@ -57,7 +57,7 @@ php artisan jetstream:install inertia --teams
 Use Composer to install Jetstrap into your new Laravel project as dev dependency:
 
 ```
-composer require nascent-africa/jetstrap --dev
+composer require madeitbelgium/jetstrap --dev
 ```
 
 Regardless how you install Jetstream, Jetstrap commands are very similar to that
@@ -154,7 +154,7 @@ To use Core Ui presets, simply call the `useCoreUi3` method within your AppServi
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use NascentAfrica\Jetstrap\JetstrapFacade;
+use MadeITBelgium\Jetstrap\JetstrapFacade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -194,7 +194,7 @@ To use AdminLte presets, simply call the `useAdminLte3` method within your AppSe
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use NascentAfrica\Jetstrap\JetstrapFacade;
+use MadeITBelgium\Jetstrap\JetstrapFacade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -279,4 +279,4 @@ composer tests
 
 
 ## License
-Jetstrap is open-sourced software licensed under the [MIT license](https://github.com/nascent-africa/jetstrap/blob/master/LICENSE).
+Jetstrap is open-sourced software licensed under the [MIT license](https://github.com/madeitbelgium/jetstrap/blob/master/LICENSE).

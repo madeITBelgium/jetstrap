@@ -1,4 +1,4 @@
-<x-jet-form-section submit="updateTeamName">
+<x-form-section submit="updateTeamName">
     <x-slot name="title">
         {{ __('Team Name') }}
     </x-slot>
@@ -8,13 +8,13 @@
     </x-slot>
 
     <x-slot name="form">
-        <x-jet-action-message on="saved">
+        <x-action-message on="saved">
             {{ __('Saved.') }}
-        </x-jet-action-message>
+        </x-action-message>
 
         <!-- Team Owner Information -->
         <div class="mb-4">
-            <x-jet-label value="{{ __('Team Owner') }}" />
+            <x-label value="{{ __('Team Owner') }}" />
 
             <div class="d-flex mt-2">
                 <img class="rounded-circle me-2" width="48" src="{{ $team->owner->profile_photo_url }}">
@@ -28,15 +28,15 @@
         <!-- Team Name -->
         <div class="w-md-75">
             <div class="form-group">
-                <x-jet-label for="name" value="{{ __('Team Name') }}" />
+                <x-label for="name" value="{{ __('Team Name') }}" />
 
-                <x-jet-input id="name"
+                <x-input id="name"
                              type="text"
                              class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
                              wire:model.defer="state.name"
                              :disabled="! Gate::check('update', $team)" />
 
-                <x-jet-input-error for="name" />
+                <x-input-error for="name" />
             </div>
         </div>
     </x-slot>
@@ -44,14 +44,14 @@
     @if (Gate::check('update', $team))
         <x-slot name="actions">
 			<div class="d-flex align-items-baseline">
-				<x-jet-button>
+				<x-button>
                     <div wire:loading class="spinner-border spinner-border-sm" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
                     
 					{{ __('Save') }}
-				</x-jet-button>
+				</x-button>
 			</div>
         </x-slot>
     @endif
-</x-jet-form-section>
+</x-form-section>

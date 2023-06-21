@@ -1,6 +1,6 @@
 <?php
 
-namespace NascentAfrica\Jetstrap;
+namespace MadeITBelgium\Jetstrap;
 
 class Jetstrap
 {

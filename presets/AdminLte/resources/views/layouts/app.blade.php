@@ -30,7 +30,7 @@
             <aside class="main-sidebar sidebar-dark-warning elevation-2">
                 <!-- Brand Logo -->
                 <a href="/" class="brand-link">
-                    <x-jet-application-mark width="36" class="brand-image img-circle elevation-1" style="opacity: .8" />
+                    <x-application-mark width="36" class="brand-image img-circle elevation-1" style="opacity: .8" />
                     <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
                 </a>
 

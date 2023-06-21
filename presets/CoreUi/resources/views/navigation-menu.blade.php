@@ -1,7 +1,7 @@
 <ul class="c-header-nav ms-auto me-4">
     <!-- Teams Dropdown -->
     @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-        <x-jet-dropdown id="teamManagementDropdown">
+        <x-dropdown id="teamManagementDropdown">
             <x-slot name="trigger">
                 {{ Auth::user()->currentTeam->name }}
 
@@ -17,14 +17,14 @@
                 </h6>
 
                 <!-- Team Settings -->
-                <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                     {{ __('Team Settings') }}
-                </x-jet-dropdown-link>
+                </x-dropdown-link>
 
                 @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                    <x-jet-dropdown-link href="{{ route('teams.create') }}">
+                    <x-dropdown-link href="{{ route('teams.create') }}">
                         {{ __('Create New Team') }}
-                    </x-jet-dropdown-link>
+                    </x-dropdown-link>
                 @endcan
 
                 <hr class="dropdown-divider">
@@ -35,15 +35,15 @@
                 </h6>
 
                 @foreach (Auth::user()->allTeams() as $team)
-                    <x-jet-switchable-team :team="$team" />
+                    <x-switchable-team :team="$team" />
                 @endforeach
             </x-slot>
-        </x-jet-dropdown>
+        </x-dropdown>
     @endif
 
     <!-- Authentication Links -->
     @auth
-        <x-jet-dropdown id="navbarDropdown">
+        <x-dropdown id="navbarDropdown">
             <x-slot name="trigger">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="c-avatar">
@@ -63,28 +63,28 @@
                     <strong>{{ __('Manage Account') }}</strong>
                 </div>
 
-                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                <x-dropdown-link href="{{ route('profile.show') }}">
                     {{ __('Profile') }}
-                </x-jet-dropdown-link>
+                </x-dropdown-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                    <x-dropdown-link href="{{ route('api-tokens.index') }}">
                         {{ __('API Tokens') }}
-                    </x-jet-dropdown-link>
+                    </x-dropdown-link>
                 @endif
 
                 <hr class="dropdown-divider">
 
                 <!-- Authentication -->
-                <x-jet-dropdown-link href="{{ route('logout') }}"
+                <x-dropdown-link href="{{ route('logout') }}"
                                      onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
                     {{ __('Log Out') }}
-                </x-jet-dropdown-link>
+                </x-dropdown-link>
                 <form method="POST" id="logout-form" action="{{ route('logout') }}">
                     @csrf
                 </form>
             </x-slot>
-        </x-jet-dropdown>
+        </x-dropdown>
     @endauth
 </ul>

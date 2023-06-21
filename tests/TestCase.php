@@ -1,10 +1,10 @@
 <?php
 
-namespace NascentAfrica\Jetstrap\Tests;
+namespace MadeITBelgium\Jetstrap\Tests;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;
-use NascentAfrica\Jetstrap\JetstrapServiceProvider;
+use MadeITBelgium\Jetstrap\JetstrapServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -170,32 +170,32 @@ class TestCase extends \Orchestra\Testbench\TestCase
         $this->assertTrue($this->filesystem->exists(resource_path('views/profile/update-password-form.blade.php')));
         $this->assertTrue($this->filesystem->exists(resource_path('views/profile/update-profile-information-form.blade.php')));
 
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/action-message.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/action-section.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/application-logo.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/application-mark.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/authentication-card.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/authentication-card-logo.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/button.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/banner.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/confirmation-modal.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/checkbox.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/danger-button.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/dialog-modal.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/dropdown.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/dropdown-link.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/form-section.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/input.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/input-error.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/label.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/modal.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/nav-link.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/secondary-button.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/section-border.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/section-title.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/switchable-team.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/validation-errors.blade.php')));
-        $this->assertTrue($this->filesystem->exists(resource_path('views/vendor/jetstream/components/welcome.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/action-message.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/action-section.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/application-logo.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/application-mark.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/authentication-card.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/authentication-card-logo.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/button.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/banner.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/confirmation-modal.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/checkbox.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/danger-button.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/dialog-modal.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/dropdown.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/dropdown-link.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/form-section.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/input.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/input-error.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/label.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/modal.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/nav-link.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/secondary-button.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/section-border.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/section-title.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/switchable-team.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/validation-errors.blade.php')));
+        $this->assertTrue($this->filesystem->exists(resource_path('views/components/welcome.blade.php')));
     }
 
     /**

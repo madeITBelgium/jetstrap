@@ -1,49 +1,49 @@
 <x-guest-layout>
-    <x-jet-authentication-card>
+    <x-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <x-authentication-card-logo />
         </x-slot>
 
-        <x-jet-validation-errors class="mb-3" />
+        <x-validation-errors class="mb-3" />
 
         <div class="card-body">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
                 <div class="form-group">
-                    <x-jet-label value="{{ __('Name') }}" />
+                    <x-label value="{{ __('Name') }}" />
 
-                    <x-jet-input class="{{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name"
+                    <x-input class="{{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name"
                                  :value="old('name')" required autofocus autocomplete="name" />
-                    <x-jet-input-error for="name"></x-jet-input-error>
+                    <x-input-error for="name"></x-input-error>
                 </div>
 
                 <div class="form-group">
-                    <x-jet-label value="{{ __('Email') }}" />
+                    <x-label value="{{ __('Email') }}" />
 
-                    <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
+                    <x-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
                                  :value="old('email')" required />
-                    <x-jet-input-error for="email"></x-jet-input-error>
+                    <x-input-error for="email"></x-input-error>
                 </div>
 
                 <div class="form-group">
-                    <x-jet-label value="{{ __('Password') }}" />
+                    <x-label value="{{ __('Password') }}" />
 
-                    <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
+                    <x-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
                                  name="password" required autocomplete="new-password" />
-                    <x-jet-input-error for="password"></x-jet-input-error>
+                    <x-input-error for="password"></x-input-error>
                 </div>
 
                 <div class="form-group">
-                    <x-jet-label value="{{ __('Confirm Password') }}" />
+                    <x-label value="{{ __('Confirm Password') }}" />
 
-                    <x-jet-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
+                    <x-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
                 </div>
 
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                            <x-jet-checkbox id="terms" name="terms" />
+                            <x-checkbox id="terms" name="terms" />
                             <label class="custom-control-label" for="terms">
                                 {!! __('I agree to the :terms_of_service and :privacy_policy', [
                                             'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'">'.__('Terms of Service').'</a>',
@@ -60,12 +60,12 @@
                             {{ __('Already registered?') }}
                         </a>
 
-                        <x-jet-button>
+                        <x-button>
                             {{ __('Register') }}
-                        </x-jet-button>
+                        </x-button>
                     </div>
                 </div>
             </form>
         </div>
-    </x-jet-authentication-card>
+    </x-authentication-card>
 </x-guest-layout>

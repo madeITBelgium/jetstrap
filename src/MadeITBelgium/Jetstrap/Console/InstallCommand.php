@@ -1,12 +1,12 @@
 <?php
 
-namespace NascentAfrica\Jetstrap\Console;
+namespace MadeITBelgium\Jetstrap\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use NascentAfrica\Jetstrap\Helpers;
-use NascentAfrica\Jetstrap\JetstrapFacade;
-use NascentAfrica\Jetstrap\Presets;
+use MadeITBelgium\Jetstrap\Helpers;
+use MadeITBelgium\Jetstrap\JetstrapFacade;
+use MadeITBelgium\Jetstrap\Presets;
 
 class InstallCommand extends Command
 {
@@ -23,7 +23,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Swap TailwindCss for Bootstrap 4.';
+    protected $description = 'Swap TailwindCss for Bootstrap 5.';
 
     /**
      * Execute the console command.
@@ -52,6 +52,18 @@ class InstallCommand extends Command
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/sass', resource_path('sass'));
 
         copy(__DIR__.'/../../../../stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
+
+        // Fix Errors Vite...
+        if ((new Filesystem)->exists(base_path('postcss.config.js'))) {
+            (new Filesystem)->delete(base_path('postcss.config.js'));
+        }
+
+        if ((new Filesystem)->exists(base_path('vite.config.js'))) {
+            (new Filesystem)->delete(base_path('vite.config.js'));
+        }
+
+        copy(__DIR__.'/../../../../stubs/postcss.config.js', base_path('postcss.config.js'));
+        copy(__DIR__.'/../../../../stubs/vite.config.js', base_path('vite.config.js'));
 
         Helpers::updateNodePackages(function ($packages) {
             return [
@@ -320,6 +332,8 @@ class InstallCommand extends Command
                 return [
                     'bootstrap' => '^5.1.0',
                     "@popperjs/core" => "^2.5.3",
+                    "lodash" => "^4.17.21",
+                    "sass" => "^1.62.1",
                 ] + $packages;
             });
 
@@ -359,14 +373,14 @@ class InstallCommand extends Command
 
         if ($stack === 'livewire') {
             // Remove bootstrap 5 resources related to livewire.
-            copy(__DIR__ . '/../../../../presets/Common/components/checkbox.blade.php', resource_path('views/vendor/jetstream/components/checkbox.blade.php'));
-            copy(__DIR__ . '/../../../../presets/Common/components/confirmation-modal.blade.php', resource_path('views/vendor/jetstream/components/confirmation-modal.blade.php'));
-            copy(__DIR__ . '/../../../../presets/Common/components/confirms-password.blade.php', resource_path('views/vendor/jetstream/components/confirms-password.blade.php'));
-            copy(__DIR__ . '/../../../../presets/Common/components/dialog-modal.blade.php', resource_path('views/vendor/jetstream/components/dialog-modal.blade.php'));
-            copy(__DIR__ . '/../../../../presets/Common/components/dropdown.blade.php', resource_path('views/vendor/jetstream/components/dropdown.blade.php'));
-            copy(__DIR__ . '/../../../../presets/Common/components/modal.blade.php', resource_path('views/vendor/jetstream/components/modal.blade.php'));
-            copy(__DIR__ . '/../../../../presets/Common/components/switchable-team.blade.php', resource_path('views/vendor/jetstream/components/switchable-team.blade.php'));
-            copy(__DIR__ . '/../../../../presets/Common/components/welcome.blade.php', resource_path('views/vendor/jetstream/components/welcome.blade.php'));
+            copy(__DIR__ . '/../../../../presets/Common/components/checkbox.blade.php', resource_path('views/components/checkbox.blade.php'));
+            copy(__DIR__ . '/../../../../presets/Common/components/confirmation-modal.blade.php', resource_path('views/components/confirmation-modal.blade.php'));
+            copy(__DIR__ . '/../../../../presets/Common/components/confirms-password.blade.php', resource_path('views/components/confirms-password.blade.php'));
+            copy(__DIR__ . '/../../../../presets/Common/components/dialog-modal.blade.php', resource_path('views/components/dialog-modal.blade.php'));
+            copy(__DIR__ . '/../../../../presets/Common/components/dropdown.blade.php', resource_path('views/components/dropdown.blade.php'));
+            copy(__DIR__ . '/../../../../presets/Common/components/modal.blade.php', resource_path('views/components/modal.blade.php'));
+            copy(__DIR__ . '/../../../../presets/Common/components/switchable-team.blade.php', resource_path('views/components/switchable-team.blade.php'));
+            copy(__DIR__ . '/../../../../presets/Common/components/welcome.blade.php', resource_path('views/components/welcome.blade.php'));
             
             copy(__DIR__ . '/../../../../presets/Common/stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
 

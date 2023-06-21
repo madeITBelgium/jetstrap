@@ -20,8 +20,8 @@
         <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
             <div class="c-sidebar-brand">
                 <a href="/">
-                    <x-jet-application-mark class="c-sidebar-brand-minimized" width="36" />
-                    <x-jet-application-mark class="c-sidebar-brand-full" width="36" />
+                    <x-application-mark class="c-sidebar-brand-minimized" width="36" />
+                    <x-application-mark class="c-sidebar-brand-full" width="36" />
                 </a>
             </div>
 
@@ -43,9 +43,9 @@
 
                 <ul class="c-header-nav d-md-down-none">
                     <li class="c-header-nav-item px-3">
-                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
-                        </x-jet-nav-link>
+                        </x-nav-link>
                     </li>
                 </ul>
 
